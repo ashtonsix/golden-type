@@ -6,23 +6,31 @@ import defaultConfig from 'src/defaultConfig';
 export default (
   baseFontSize = BASE_FONT_SIZE,
   baseContentWidth = BASE_CONTENT_WIDTH,
-  config = defaultConfig
-) => ReactClass => (
+  fontConfig = defaultConfig
+) => Component => (
   React.createClass({
     childContextTypes: {
-      baseFontSize: PropTypes.number,
-      baseContentWidth: PropTypes.oneOfType(
-        PropTypes.number,
-        PropTypes.func,
+      goldenType: PropTypes.shape(
+        {
+          baseFontSize: PropTypes.number,
+          baseContentWidth: PropTypes.oneOfType(
+            PropTypes.number,
+            PropTypes.func,
+          ),
+          fontConfig: PropTypes.object,
+        }
       ),
     },
 
     getChildContext() {
-      return {baseFontSize, baseContentWidth};
+      return {goldenType: {
+        baseFontSize, baseContentWidth,
+        fontConfig: {...defaultConfig, ...fontConfig},
+      }};
     },
 
     render() {
-      return <ReactClass {...this.props}/>;
+      return <Component {...this.props}/>;
     },
   })
 );

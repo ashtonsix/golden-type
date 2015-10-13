@@ -1,11 +1,5 @@
 import deepExtend from 'deep-extend';
 
-export const zip = (keys, values) => {
-  const result = {};
-  for (let i = 0, l = keys.length; i < l; i++) result[keys[i]] = values[i];
-  return result;
-};
-
 export const values = object => {
   const result = [];
   for (let key in object) { //eslint-disable-line

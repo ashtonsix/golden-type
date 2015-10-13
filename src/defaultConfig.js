@@ -1,4 +1,4 @@
-import {goldenScale} from 'src/utils';
+import {goldenScale} from 'src/helpers';
 import {merge} from 'src/prelude';
 import {
   NEUTRAL_LIGHTER, NEUTRAL, NEUTRAL_DARK,
