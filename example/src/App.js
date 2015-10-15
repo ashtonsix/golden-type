@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BACKGROUND} from 'src/constants';
-import Paper from 'example/Paper';
+import {BACKGROUND} from '../../src/constants';
+import Paper from './Paper';
 
-import goldenType, {Title, Heading, SubHeading, Body, Small, Strong, Code} from 'src';
+import goldenType, {Title, Heading, SubHeading, Body, Small, Strong, Code} from '../../src';
 
 @goldenType(16, windowWidth => windowWidth - 60)
 export default class App extends Component {

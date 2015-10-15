@@ -1,22 +1,20 @@
 import React, {PropTypes} from 'react';
-import {values, mapKeys, merge, throttle} from 'src/prelude';
-import {lineHeight, goldenScale} from 'src/helpers';
+import {values, mapKeys, merge, throttle} from './prelude';
+import {lineHeight, goldenScale} from './helpers';
 
 export default fontClass => (
   React.createClass({
     propTypes: {style: PropTypes.object},
 
     contextTypes: {
-      goldenType: PropTypes.shape(
-        {
-          baseFontSize: PropTypes.number,
-          baseContentWidth: PropTypes.oneOfType(
-            PropTypes.number,
-            PropTypes.func,
-          ),
-          fontConfig: PropTypes.object,
-        }
-      ),
+      goldenType: PropTypes.shape({
+        baseFontSize: PropTypes.number,
+        baseContentWidth: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.func,
+        ]),
+        fontConfig: PropTypes.object,
+      }),
     },
 
     getInitialState() { return {baseContentWidth: this.getBaseContentWidth()}; },

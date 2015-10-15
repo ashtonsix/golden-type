@@ -1,8 +1,6 @@
 {
   "extends": "airbnb",
   "rules": {
-    // I like nested ternary's
-    "no-nested-ternary": 0,
     // THIS IS SPARTA!!
     "id-length": 0,
   }

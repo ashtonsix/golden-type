@@ -1,7 +1,5 @@
-import goldenType from 'src/goldenDecorator';
-import createFontClass from 'src/createFontClass';
-
-export default goldenType;
+export default require('./goldenDecorator');
+export const createFontClass = require('./createFontClass');
 
 export const Title = createFontClass('Title');
 export const Heading = createFontClass('Heading');

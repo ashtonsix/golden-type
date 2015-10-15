@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 
-import {BASE_FONT_SIZE, BASE_CONTENT_WIDTH} from 'src/constants';
-import defaultConfig from 'src/defaultConfig';
+import {BASE_FONT_SIZE, BASE_CONTENT_WIDTH} from './constants';
+import defaultConfig from './defaultConfig';
+import {merge} from './prelude';
 
 export default (
   baseFontSize = BASE_FONT_SIZE,
@@ -10,22 +11,20 @@ export default (
 ) => Component => (
   React.createClass({
     childContextTypes: {
-      goldenType: PropTypes.shape(
-        {
-          baseFontSize: PropTypes.number,
-          baseContentWidth: PropTypes.oneOfType(
-            PropTypes.number,
-            PropTypes.func,
-          ),
-          fontConfig: PropTypes.object,
-        }
-      ),
+      goldenType: PropTypes.shape({
+        baseFontSize: PropTypes.number,
+        baseContentWidth: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.func,
+        ]),
+        fontConfig: PropTypes.object,
+      }),
     },
 
     getChildContext() {
       return {goldenType: {
         baseFontSize, baseContentWidth,
-        fontConfig: {...defaultConfig, ...fontConfig},
+        fontConfig: merge(defaultConfig, fontConfig),
       }};
     },
 

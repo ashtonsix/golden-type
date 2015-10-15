@@ -1,10 +1,10 @@
-import {goldenScale} from 'src/helpers';
-import {merge} from 'src/prelude';
+import {goldenScale} from './helpers';
+import {merge} from './prelude';
 import {
   NEUTRAL_LIGHTER, NEUTRAL, NEUTRAL_DARK,
   INVERSE_LIGHT, INVERSE, INVERSE_DARK,
   BASE_FONT_SIZE,
-} from 'src/constants';
+} from './constants';
 
 export const base = {
   fontScale: 0,
