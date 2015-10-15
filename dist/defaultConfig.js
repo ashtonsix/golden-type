@@ -10,7 +10,8 @@ var _prelude = require('./prelude');
 
 var _constants = require('./constants');
 
-var base = {
+var baseStyle = {
+  tag: 'p',
   fontScale: 0,
   marginScale: 0,
   style: {
@@ -25,39 +26,39 @@ var base = {
     inline: { style: { display: 'inline' } },
     inlineBlock: { style: { display: 'inline-block' } } } };
 
-exports.base = base;
-var header = {
+exports.baseStyle = baseStyle;
+var headerStyle = {
   style: {
     fontFamily: '"Roboto", sans-serif' } };
 
-exports.header = header;
+exports.headerStyle = headerStyle;
 exports['default'] = {
-  Title: (0, _prelude.merge)(base, header, {
+  Title: (0, _prelude.merge)(baseStyle, headerStyle, {
     tag: 'h1',
     fontScale: 1.5 }),
-  Heading: (0, _prelude.merge)(base, header, {
+  Heading: (0, _prelude.merge)(baseStyle, headerStyle, {
     tag: 'h2',
     fontScale: 1 }),
-  SubHeading: (0, _prelude.merge)(base, header, {
+  SubHeading: (0, _prelude.merge)(baseStyle, headerStyle, {
     tag: 'h3',
     fontScale: 0.5 }),
-  Body: (0, _prelude.merge)(base, {
+  Body: (0, _prelude.merge)(baseStyle, {
     tag: 'p' }),
-  Small: (0, _prelude.merge)(base, {
+  Small: (0, _prelude.merge)(baseStyle, {
     tag: 'small',
     fontScale: -0.5,
     marginScale: -0.5,
     style: { color: _constants.NEUTRAL },
     flags: {
       inverseColor: { color: _constants.INVERSE } } }),
-  Strong: (0, _prelude.merge)(base, {
+  Strong: (0, _prelude.merge)(baseStyle, {
     tag: 'strong',
     fontScale: -(1 / 3),
     marginScale: -0.5,
     style: { fontWeight: 700 },
     flags: {
       uppercase: { fontScale: -0.5, style: { textTransform: 'uppercase' } } } }),
-  Code: (0, _prelude.merge)(base, {
+  Code: (0, _prelude.merge)(baseStyle, {
     tag: 'pre',
     fontScale: -0.5,
     style: {

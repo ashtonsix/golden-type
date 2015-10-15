@@ -6,7 +6,8 @@ import {
   BASE_FONT_SIZE,
 } from './constants';
 
-export const base = {
+export const baseStyle = {
+  tag: 'p',
   fontScale: 0,
   marginScale: 0,
   style: {
@@ -24,7 +25,7 @@ export const base = {
   },
 };
 
-export const header = {
+export const headerStyle = {
   style: {
     fontFamily: '"Roboto", sans-serif',
   },
@@ -32,37 +33,37 @@ export const header = {
 
 export default {
   Title: merge(
-    base,
-    header,
+    baseStyle,
+    headerStyle,
     {
       tag: 'h1',
       fontScale: 1.5,
     }
   ),
   Heading: merge(
-    base,
-    header,
+    baseStyle,
+    headerStyle,
     {
       tag: 'h2',
       fontScale: 1,
     }
   ),
   SubHeading: merge(
-    base,
-    header,
+    baseStyle,
+    headerStyle,
     {
       tag: 'h3',
       fontScale: 0.5,
     }
   ),
   Body: merge(
-    base,
+    baseStyle,
     {
       tag: 'p',
     }
   ),
   Small: merge(
-    base,
+    baseStyle,
     {
       tag: 'small',
       fontScale: -0.5,
@@ -74,7 +75,7 @@ export default {
     },
   ),
   Strong: merge(
-    base,
+    baseStyle,
     {
       tag: 'strong',
       fontScale: -(1 / 3),
@@ -86,7 +87,7 @@ export default {
     },
   ),
   Code: merge(
-    base,
+    baseStyle,
     {
       tag: 'pre',
       fontScale: -0.5,

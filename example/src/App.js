@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
-import {BACKGROUND} from '../../src/constants';
+import {BACKGROUND} from 'golden-type/constants';
 import Paper from './Paper';
 
-import goldenType, {Title, Heading, SubHeading, Body, Small, Strong, Code} from '../../src';
+import goldenType, {createFontClass, Title, SubHeading, Body, Small, Strong, Code} from 'golden-type';
+import defaultConfig from 'golden-type/defaultConfig';
+import {merge} from 'golden-type/prelude';
 
-@goldenType(16, windowWidth => windowWidth - 60)
+const BlueHeading = createFontClass('BlueHeading');
+
+@goldenType(16, windowWidth => windowWidth - 60, {
+  BlueHeading: merge(defaultConfig.Heading, {style: {color: 'blue'}}),
+})
 export default class App extends Component {
   render() {
     return (
@@ -15,41 +21,34 @@ export default class App extends Component {
       }}>
         <Paper>
           <Title>Title - Lorem ipsum.</Title>
-          <Heading>Heading - Lorem ipsum dolor sit.</Heading>
-          <SubHeading>SubHeading - Lorem ipsum dolor sit amet, consectetur adipisicing.</SubHeading>
+          <BlueHeading>BlueHeading - Lorem ipsum.</BlueHeading>
+          <SubHeading style={{color: 'red'}}>Red SubHeading - Lorem ipsum dolor sit amet.</SubHeading>
           <Body>Body - Lorem ipsum <Strong inline uppercase>dolor sit amet</Strong>, consectetur adipisicing elit, <Code inline>sed do eiusmod tempor incididunt</Code> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Body>
           <Strong>Strong - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Strong>
           <Code>
-{`import React, {Component, PropTypes} from 'react';
-import {NEUTRAL_LIGHTER, NEUTRAL_DARK} from 'styles/color';
-import radium from 'radium';
+{`import React from 'react';
+import {NEUTRAL_LIGHT} from 'golden-type/constants';
+import {merge} from 'golden-type/prelude';
+import {Small} from 'golden-type';
 
-@radium
-export default class Body extends Component {
-  static propTypes = {
-    children: PropTypes.string,
-    language: PropTypes.string,
-    style: PropTypes.object,
-  }
+const countChildren = children => children instanceof Array ? children.length : (children ? 1 : 0);
+const paperStyle = {
+  boxShadow: \`2px 3px 8px 1px $\{NEUTRAL_LIGHT\}\`,
+  padding: 20,
+  backgroundColor: 'white',
+};
 
-  style = {
-    fontFamily: '"Inconsolata", monospace',
-    fontSize: 16,
-    fontWeight: 400,
-    color: NEUTRAL_DARK,
-    backgroundColor: NEUTRAL_LIGHTER,
-  }
-
-  render() {
-    return (
-      <code>
-        <pre style={[this.style, this.props.style]}>{this.props.children}</pre>
-      </code>
-    );
-  }
-}`}
+export default ({children, style}) => (
+  <div style={merge(paperStyle, style || {})}>
+    {children}
+    <Small noMargin>This component contains {countChildren(children)} children</Small>
+  </div>
+);`}
           </Code>
           <Small>Small - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, <Code inline>sed do eiusmod tempor incididunt</Code> sunt in culpa qui officia deserunt mollit anim id est laborum.</Small>
+        </Paper>
+        <Paper style={{backgroundColor: 'lightblue', marginTop: 10}}>
+          <Title inverseColor>Title w/ inversed color</Title>
         </Paper>
       </div>
     );

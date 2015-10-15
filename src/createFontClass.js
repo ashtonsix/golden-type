@@ -56,7 +56,7 @@ export default fontClass => (
       );
 
       return React.createElement(
-        config.tag,
+        config.tag || 'p',
         {...this.props, style}
       );
     },

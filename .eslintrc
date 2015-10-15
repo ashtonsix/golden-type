@@ -3,5 +3,7 @@
   "rules": {
     // THIS IS SPARTA!!
     "id-length": 0,
+    // THIS IS... a hatred of expression-breaking statements
+    "no-nested-ternary": 0,
   }
 }

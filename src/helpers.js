@@ -1,6 +1,6 @@
 import {GOLDEN_RATIO} from './constants';
 
-export const goldenScale = (fontSize, scalar) => (
+export const goldenScale = (fontSize, scalar = 0) => (
   fontSize * Math.pow(GOLDEN_RATIO, scalar)
 );
 

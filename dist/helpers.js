@@ -6,7 +6,8 @@ Object.defineProperty(exports, '__esModule', {
 
 var _constants = require('./constants');
 
-var goldenScale = function goldenScale(fontSize, scalar) {
+var goldenScale = function goldenScale(fontSize) {
+  var scalar = arguments[1] === undefined ? 0 : arguments[1];
   return fontSize * Math.pow(_constants.GOLDEN_RATIO, scalar);
 };
 

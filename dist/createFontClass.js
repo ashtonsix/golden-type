@@ -69,7 +69,7 @@ exports['default'] = function (fontClass) {
         return typeof v === 'number' ? Math.round(v) : v;
       }), config.style, this.props.style);
 
-      return _react2['default'].createElement(config.tag, _extends({}, this.props, { style: style }));
+      return _react2['default'].createElement(config.tag || 'p', _extends({}, this.props, { style: style }));
     } });
 };
 
