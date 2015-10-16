@@ -2,6 +2,7 @@
   "name": "golden-type",
   "version": "0.0.1",
   "description": "Beautiful, semantic typography for React",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist && rimraf example/build.js",
     "build:lib": "babel src -d dist",
