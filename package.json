@@ -1,6 +1,6 @@
 {
   "name": "golden-type",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Beautiful, semantic typography for React",
   "main": "dist/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "npm run clean && npm run build:lib && npm run build:example",
     "start": "node example/server.js",
     "lint": "eslint src",
-    "postinstall": "[ \"$NODE_ENV\" != production ] && npm i --prefix example"
+    "postinstall": "if [ -z \"$npm_config_production\" ]; then npm i --prefix example; fi"
   },
   "repository": {
     "type": "git",
