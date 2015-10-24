@@ -1,16 +1,16 @@
 {
   "name": "golden-type",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Beautiful, semantic typography for React",
   "main": "dist/index.js",
   "scripts": {
+    "install:example": "npm i --prefix example",
     "clean": "rimraf dist && rimraf example/build.js",
     "build:lib": "babel src -d dist",
     "build:example": "webpack --config example/webpack.config.js",
     "build": "npm run clean && npm run build:lib && npm run build:example",
     "start": "node example/server.js",
-    "lint": "eslint src",
-    "postinstall": "if [ -z \"$npm_config_production\" ]; then npm i --prefix example; fi"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",

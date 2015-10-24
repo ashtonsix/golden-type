@@ -9,7 +9,9 @@ For theory [read this](http://www.pearsonified.com/2011/12/golden-ratio-typograp
 ```
 git clone git@github.com:Demi-IO/golden-type.git
 cd golden-type
-npm i && npm start
+npm i
+npm i --prefix example
+npm start
 ```
 
 Usage
@@ -105,5 +107,4 @@ export default class App extends React.Component {
 Notes
 =====
 * Check the example, or create an issue if anything is unclear
-* Arbitrary props will be passed down (e.g. `href`, `onClick`)
-* **Todo** - Add `extends` config option
+* Arbitrary props are passed to children (e.g. `href`, `onClick`)
