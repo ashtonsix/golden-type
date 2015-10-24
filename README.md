@@ -105,4 +105,5 @@ export default class App extends React.Component {
 Notes
 =====
 * Check the example, or create an issue if anything is unclear
-* **Todo** - Transforms & arguments for flags to, for example, create a link component.
+* Arbitrary props will be passed down (e.g. `href`, `onClick`)
+* **Todo** - Add `extends` config option
