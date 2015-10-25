@@ -61,7 +61,7 @@ Everything is configurable and you can create your own flags / components.
 
 API
 ---
-### `goldenType :: (baseFontSize, baseContentWidth, config) -> function`
+##### `goldenType :: (baseFontSize, baseContentWidth, config) -> function`
 For readability 16 is the recommended minimum for `baseFontSize`.
 
 `baseContentWidth` takes the `windowWidth` and should return the width of most prevalent text in your design (e.g. central column).
@@ -74,7 +74,7 @@ const config = {
 };
 ```
 
-### `createFontClass :: fontName -> Component`
+##### `createFontClass :: fontName -> Component`
 To use custom components you'll need this helper, it'll grab options from the config.
 
 ```js
