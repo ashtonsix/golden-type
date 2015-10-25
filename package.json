@@ -1,6 +1,6 @@
 {
   "name": "golden-type",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Beautiful, semantic typography for React",
   "main": "dist/index.js",
   "scripts": {
